@@ -3,12 +3,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Flutter 3.44.8](https://img.shields.io/badge/Flutter-3.44.8-02569B?logo=flutter)
 ![Dart 3.12.2](https://img.shields.io/badge/Dart-3.12.2-0175C2?logo=dart)
-![Build status: not connected](https://img.shields.io/badge/build-not%20connected-lightgrey)
-![GitHub release: not published](https://img.shields.io/badge/release-not%20published-lightgrey)
+[![Flutter validation](https://github.com/sxmplycaleb/EmotionSense-AI/actions/workflows/flutter_validation.yml/badge.svg?branch=main)](https://github.com/sxmplycaleb/EmotionSense-AI/actions/workflows/flutter_validation.yml)
+[![CodeQL](https://github.com/sxmplycaleb/EmotionSense-AI/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/sxmplycaleb/EmotionSense-AI/actions/workflows/codeql.yml)
+[![GitHub release](https://img.shields.io/github/v/release/sxmplycaleb/EmotionSense-AI?display_name=tag)](https://github.com/sxmplycaleb/EmotionSense-AI/releases/latest)
 
 EmotionSense AI is an AI-powered emotional reflection platform with a privacy-conscious Flutter mobile application as its first client. The project is designed around on-device machine learning, transparent user control, and a maintainable architecture suitable for production delivery.
 
-> **Project status:** `v0.1.0-foundation` release readiness. No application features have been implemented.
+> **Project status:** Milestone 0.5 GitHub production hardening. The repository foundation is public; no application features have been implemented.
 
 ## Vision
 
@@ -42,7 +43,7 @@ The planned scope and acceptance criteria are maintained in [Product Requirement
 | ML inference | TensorFlow Lite | Planned; not installed | Future approved on-device model execution |
 | Signal processing | MediaPipe | Planned; not installed | Future validated detection and preprocessing |
 | Local persistence | Isar | Planned; not installed | Future structured local storage behind repositories |
-| Automation | GitHub Actions | Workflow pinned by commit SHA | Formatting, analysis, and tests |
+| Automation | GitHub Actions | Workflow actions pinned by commit SHA | Formatting, analysis, tests, and CodeQL workflow scanning |
 
 Technology choices are constraints, not permission to couple business rules to frameworks. See [Architecture](docs/ARCHITECTURE.md) for boundaries and assumptions.
 
@@ -54,6 +55,7 @@ The repository foundation is organized as:
 .
 ├── README.md
 ├── CHANGELOG.md
+├── CITATION.cff
 ├── LICENSE
 ├── SECURITY.md
 ├── CODE_OF_CONDUCT.md
@@ -61,9 +63,10 @@ The repository foundation is organized as:
 ├── MILESTONE_REPORT.md
 ├── .github/
 │   ├── ISSUE_TEMPLATE/      # Structured, privacy-safe issue intake
+│   ├── SUPPORT.md
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   ├── dependabot.yml
-│   └── workflows/           # Flutter validation
+│   └── workflows/           # Flutter validation and CodeQL
 ├── .vscode/                 # Shared editor settings and recommendations
 ├── apps/
 │   └── mobile/              # Flutter client for Android and iOS
@@ -135,6 +138,7 @@ Product screenshots do not exist because Home, Camera, History, and Analytics ha
 - [Milestone History](docs/MILESTONES/README.md)
 - [Current Milestone Report](MILESTONE_REPORT.md)
 - [GitHub Project Plan](docs/GITHUB_PROJECT.md)
+- [GitHub Production Hardening](docs/GITHUB_HARDENING.md)
 - [Release Checklist](docs/RELEASE_CHECKLIST.md)
 - [v0.1.0 Foundation Release Notes](docs/releases/v0.1.0-foundation.md)
 - [Changelog](CHANGELOG.md)
@@ -145,14 +149,19 @@ Product screenshots do not exist because Home, Camera, History, and Analytics ha
 - Report vulnerabilities privately according to the [Security Policy](SECURITY.md).
 - Use the GitHub issue and pull-request templates to provide reviewable, privacy-safe evidence.
 - Ownership and review routing are defined in [CODEOWNERS](CODEOWNERS).
+- Project support routes and limitations are defined in the [Support Guide](.github/SUPPORT.md).
 
 ## Security and Privacy
 
 Emotion-related data may be highly sensitive. Do not commit personal data, recordings, derived biometric data, secrets, proprietary datasets, or production model artifacts without explicit authorization and appropriate controls. Security concerns should be disclosed privately to the maintainers rather than through a public issue.
 
-## Badge Configuration
+## Repository Status
 
-The build-status and GitHub-release badges are intentionally static placeholders because no GitHub repository URL is recorded locally. After the first push, replace them with badges linked to the real workflow and release pages; do not guess the repository owner or URL.
+Status badges target the configured `origin` repository at `sxmplycaleb/EmotionSense-AI`. A workflow badge is authoritative only after that workflow completes on GitHub. Repository-owner security settings and required checks are tracked in the [hardening runbook](docs/GITHUB_HARDENING.md).
+
+## Citation
+
+Citation metadata is available in [CITATION.cff](CITATION.cff). The citation describes the engineering foundation and must not be interpreted as evidence that the product requirements or AI functionality are implemented.
 
 ## License
 

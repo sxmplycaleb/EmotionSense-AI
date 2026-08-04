@@ -10,8 +10,10 @@ updates:
       time: "06:00"
       timezone: "Africa/Nairobi"
     open-pull-requests-limit: 5
+    commit-message:
+      prefix: "build(deps)"
 
-  # Actions referenced by future workflows under .github/workflows.
+  # Actions referenced by workflows under .github/workflows.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -20,6 +22,8 @@ updates:
       time: "06:30"
       timezone: "Africa/Nairobi"
     open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci(deps)"
 
   # Container base images. This becomes active if Dockerfiles are added.
   - package-ecosystem: "docker"
@@ -30,3 +34,5 @@ updates:
       time: "07:00"
       timezone: "Africa/Nairobi"
     open-pull-requests-limit: 5
+    commit-message:
+      prefix: "build(deps)"

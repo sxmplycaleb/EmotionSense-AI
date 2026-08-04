@@ -4,12 +4,13 @@ EmotionSense AI processes potentially sensitive emotional-reflection data. Secur
 
 ## Supported Versions
 
-The project has not published a production release.
+The project has not published a production application release. The foundation tag is supported for repository and documentation security corrections.
 
 | Version | Supported |
 | --- | --- |
 | Unreleased default branch | Yes |
-| Tagged releases | None published |
+| `v0.1.0` foundation | Yes |
+| Production application releases | None published |
 
 This table will be updated when versioned releases begin. Support commitments for a release must be stated at release time.
 
@@ -49,3 +50,5 @@ The project will not pursue action against good-faith research that follows this
 ## Scope Notes
 
 Security review should consider mobile permissions, transient media, local storage, exported data, backups, logs, model integrity, dependencies, build provenance, and release signing. Architecture or product changes resulting from a report must follow the project's ADR and review processes.
+
+Repository-owner security settings are tracked in the [GitHub hardening runbook](docs/GITHUB_HARDENING.md).
