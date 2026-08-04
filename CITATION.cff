@@ -1,0 +1,21 @@
+cff-version: "1.2.0"
+message: >-
+  If you use EmotionSense AI or its engineering documentation, please cite
+  this software using the metadata below.
+title: "EmotionSense AI"
+type: software
+authors:
+  - name: "EmotionSense AI contributors"
+version: "0.1.0"
+date-released: "2026-08-04"
+repository-code: "https://github.com/sxmplycaleb/EmotionSense-AI"
+license: MIT
+abstract: >-
+  A privacy-first, offline-first emotional reflection platform foundation for
+  responsible on-device AI research and mobile engineering.
+keywords:
+  - Flutter
+  - on-device AI
+  - responsible AI
+  - privacy
+  - emotional reflection

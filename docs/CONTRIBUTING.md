@@ -129,7 +129,7 @@ Release maintainers move entries into a dated version section, compare links, an
 
 ## 12. Conduct
 
-Contributors are expected to communicate respectfully, welcome evidence-based disagreement, protect participant and user dignity, and avoid overstating what emotion-related models can know. A formal code of conduct should be adopted before opening the repository to broad public contribution.
+Contributors are expected to communicate respectfully, welcome evidence-based disagreement, protect participant and user dignity, and avoid overstating what emotion-related models can know. Participation is governed by the repository's [Code of Conduct](../CODE_OF_CONDUCT.md); support and reporting routes are summarized in the [support guide](../.github/SUPPORT.md).
 
 ## 13. Licensing
 

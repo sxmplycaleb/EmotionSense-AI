@@ -1,0 +1,150 @@
+name: CodeQL
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: "23 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      analyze_android:
+        description: Run the opt-in Java/Kotlin analysis job
+        required: false
+        default: false
+        type: boolean
+      analyze_ios:
+        description: Run the opt-in Swift analysis job
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze-actions:
+    name: Analyze GitHub Actions
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@d1ba80a13dd99fba24a470575428917156a28b43 # v4.37.5
+        with:
+          build-mode: none
+          languages: actions
+          queries: security-extended
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@d1ba80a13dd99fba24a470575428917156a28b43 # v4.37.5
+        with:
+          category: "/language:actions"
+
+  # Enable by setting the repository variable CODEQL_ANDROID_ENABLED to "true"
+  # after meaningful native Android code is added and the build is validated.
+  analyze-android:
+    name: Analyze Android (Java/Kotlin)
+    if: ${{ vars.CODEQL_ANDROID_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && inputs.analyze_android) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    defaults:
+      run:
+        working-directory: apps/mobile
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          channel: stable
+          flutter-version-file: apps/mobile/pubspec.yaml
+          cache: true
+          pub-cache: true
+
+      - name: Resolve Flutter dependencies
+        run: flutter pub get
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@d1ba80a13dd99fba24a470575428917156a28b43 # v4.37.5
+        with:
+          build-mode: manual
+          languages: java-kotlin
+          queries: security-extended
+
+      - name: Build Android application for analysis
+        run: flutter build apk --debug
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@d1ba80a13dd99fba24a470575428917156a28b43 # v4.37.5
+        with:
+          category: "/language:java-kotlin"
+
+  # Enable by setting the repository variable CODEQL_IOS_ENABLED to "true"
+  # after meaningful native iOS code is added and the build is validated.
+  analyze-ios:
+    name: Analyze iOS (Swift)
+    if: ${{ vars.CODEQL_IOS_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && inputs.analyze_ios) }}
+    runs-on: macos-latest
+    timeout-minutes: 45
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    defaults:
+      run:
+        working-directory: apps/mobile
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          channel: stable
+          flutter-version-file: apps/mobile/pubspec.yaml
+          cache: true
+          pub-cache: true
+
+      - name: Resolve Flutter dependencies
+        run: flutter pub get
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@d1ba80a13dd99fba24a470575428917156a28b43 # v4.37.5
+        with:
+          build-mode: manual
+          languages: swift
+          queries: security-extended
+
+      - name: Build iOS application for analysis
+        run: flutter build ios --debug --no-codesign
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@d1ba80a13dd99fba24a470575428917156a28b43 # v4.37.5
+        with:
+          category: "/language:swift"

@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Pinned CodeQL analysis for GitHub Actions workflows.
+- Citation metadata, support guidance, issue-template configuration, and a GitHub hardening runbook.
+- Milestone 0.5 production-hardening audit and manual GitHub configuration checklist.
+
+### Changed
+
+- Connected README status badges to the configured GitHub repository.
+- Added Conventional Commit prefixes to weekly Dependabot updates.
+- Updated security, contribution, release, and milestone documentation to reflect the tagged public foundation.
+
+### Security
+
+- Documented branch, tag, Actions, code-scanning, secret-scanning, vulnerability-reporting, and release controls requiring repository-owner configuration.
+
 ## [0.1.0] - 2026-08-04
 
 ### Added
