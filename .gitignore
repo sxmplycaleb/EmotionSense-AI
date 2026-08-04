@@ -1,0 +1,47 @@
+# Editor and operating-system files
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*~
+*.swp
+*.swo
+.directory
+.history/
+.idea/
+*.iml
+
+# Dart and Flutter
+**/.dart_tool/
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub/
+**/.pub-cache/
+**/build/
+**/coverage/
+
+# Platform-local configuration
+**/android/local.properties
+**/android/key.properties
+**/*.jks
+**/*.keystore
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Pods/
+**/ios/.symlinks/
+**/xcuserdata/
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# Tool output
+*.log
+*.tmp

@@ -1,0 +1,25 @@
+# Default owner for repository changes.
+* @sxmplycaleb
+
+# Governance, security, and community health.
+/CODEOWNERS @sxmplycaleb
+/SECURITY.md @sxmplycaleb
+/CODE_OF_CONDUCT.md @sxmplycaleb
+/.github/ @sxmplycaleb
+/.editorconfig @sxmplycaleb
+/.gitattributes @sxmplycaleb
+/.gitignore @sxmplycaleb
+
+# Product, engineering, and architectural documentation.
+/docs/ @sxmplycaleb
+/README.md @sxmplycaleb
+/CHANGELOG.md @sxmplycaleb
+/LICENSE @sxmplycaleb
+/MILESTONE_REPORT.md @sxmplycaleb
+
+# Implementation and future workspaces.
+/apps/mobile/ @sxmplycaleb
+/packages/ @sxmplycaleb
+/ml/ @sxmplycaleb
+/scripts/ @sxmplycaleb
+/docker/ @sxmplycaleb

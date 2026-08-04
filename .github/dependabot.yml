@@ -1,0 +1,32 @@
+version: 2
+
+updates:
+  # Flutter and Dart packages for the mobile client.
+  - package-ecosystem: "pub"
+    directory: "/apps/mobile"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Africa/Nairobi"
+    open-pull-requests-limit: 5
+
+  # Actions referenced by future workflows under .github/workflows.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:30"
+      timezone: "Africa/Nairobi"
+    open-pull-requests-limit: 5
+
+  # Container base images. This becomes active if Dockerfiles are added.
+  - package-ecosystem: "docker"
+    directory: "/docker"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Africa/Nairobi"
+    open-pull-requests-limit: 5
