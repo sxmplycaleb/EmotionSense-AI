@@ -10,6 +10,16 @@ Architecture Decision Records (ADRs) preserve the context, alternatives, and con
 | --- | --- | --- |
 | [ADR-0002](0002-repository-foundation-before-feature-development.md) | Accepted | Repository Foundation Before Feature Development |
 | [ADR-0003](0003-feature-flags-and-progressive-feature-enablement.md) | Accepted | Feature Flags and Progressive Feature Enablement |
+| [ADR-0004](ADR-0004-FER-Claim-Boundary.md) | Accepted | FER Claim Boundary |
+| [ADR-0005](ADR-0005-Dataset-Governance.md) | Accepted | Dataset Governance |
+| [ADR-0006](ADR-0006-Production-Model-Selection.md) | Accepted | Production Model Selection |
+| [ADR-0007](ADR-0007-Mobile-Inference-Architecture.md) | Accepted | Mobile Inference Architecture |
+| [ADR-0008](ADR-0008-Confidence-Abstention.md) | Accepted | Confidence and Abstention |
+| [ADR-0009](ADR-0009-Local-Only-Inference.md) | Accepted | Local-Only Inference |
+| [ADR-0010](ADR-0010-Privacy-Regression-Checklist.md) | Accepted | Privacy Regression Checklist |
+| [ADR-0011](ADR-0011-Implementation-Baseline.md) | Accepted | Implementation Baseline |
+| [ADR-0012](ADR-0012-User-Authored-Reflection-Records.md) | Accepted | User-Authored Reflection Records |
+| [ADR-0013](ADR-0013-Camera-Capture-Foundation.md) | Accepted | Camera Capture Foundation |
 
 ## When an ADR Is Required
 

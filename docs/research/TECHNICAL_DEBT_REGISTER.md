@@ -19,7 +19,6 @@
 | TD-12 | No production telemetry creates an operational evidence gap | Accepted to preserve local-only privacy | Field failures and subgroup harm are harder to observe | Medium | Pre-beta privacy-preserving operations plan; no telemetry implied |
 | TD-13 | Launch jurisdictions, languages, and minors boundary are not fixed | Product/market decisions were outside engineering evidence | Legal, localization, consent, and test scope remain variable | High | Pre-alpha product/legal scope lock |
 | TD-14 | Repository roadmap terminology predates Milestones 1.0–1.5 | Existing governance was not replaced during this consolidation | Phase naming can confuse traceability | Low | Next documentation governance revision |
-| TD-15 | Baseline PRD contains broader local history/reflection assumptions than the strict inference-data policy | Milestone 1.4 deliberately minimized inference-derived persistence | Future product scope could conflate user-authored records with inferred history | High | Phase 2.0 requirements reconciliation before persistence work |
 
 ## Acceptance Rules
 
@@ -28,6 +27,12 @@
 - Medium/low debt may be carried only with documented impact and review.
 - Closing an item requires linked evidence or a superseding ADR, not a status assertion.
 
+## Resolved Debt
+
+| ID | Resolution | Evidence |
+| --- | --- | --- |
+| TD-15 | Milestone 2.0 reconciled history requirements: only user-authored reflections may be retained, with no machine-derived fields or session links. | [ADR-0012](../DECISIONS/ADR-0012-User-Authored-Reflection-Records.md), [Milestone 2.0 Report](../MILESTONES/2.0-requirements-reconciliation.md) |
+
 ## Evidence Classification
 
 - **Facts:** these gaps are explicitly identified by previous milestone documents.
@@ -35,4 +40,3 @@
 - **Trade-offs:** accepting bounded debt enables implementation while keeping production-critical gaps visible.
 - **Constraints:** debt cannot override claim, privacy, provenance, or hard release gates.
 - **Open Questions:** ownership roles and decisions are tracked in [Open Decisions](OPEN_DECISIONS.md).
-
