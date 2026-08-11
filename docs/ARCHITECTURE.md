@@ -148,6 +148,7 @@ Permission check
 - Bound input queues; do not allow stale frames or samples to accumulate.
 - Close cameras, streams, interpreters, and native resources deterministically.
 - Stop inference when consent is absent, permissions are revoked, or lifecycle policy disallows capture.
+- Keep camera preview behind a replaceable service, own at most one active controller, and release it on stop, lifecycle interruption, and feature disposal. Preview frames remain transient and must not be captured, streamed, persisted, transmitted, or logged unless a later ADR explicitly authorizes a new data flow.
 - Treat unsupported input, poor quality, and confidence below threshold as normal unavailable outcomes.
 - Do not turn model scores directly into user-facing claims.
 
@@ -165,7 +166,7 @@ Bundled model replacement is a release change. Remote model delivery is not assu
 
 ## 9. Persistence
 
-Isar is the default structured local database behind repository interfaces.
+Isar is the default structured local database behind repository interfaces when persistence is separately approved. The initial permitted record is a user-authored reflection; camera- and inference-derived data remain transient and must never be written to the database.
 
 - Domain entities and Isar collection models remain separate.
 - Schema versions and migrations are explicit, forward-tested, and covered by fixtures.

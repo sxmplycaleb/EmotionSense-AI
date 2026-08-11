@@ -21,6 +21,7 @@ This policy inventories data used by the production mobile experience. It does n
 | Temporal state, if approved | Yes, bounded memory | No | No | Stabilize display; clear on stop/background/error |
 | Camera permission state | Read from OS | OS-managed | No | Respect user choice |
 | Minimal user preferences | As needed | Yes, locally | No | Non-sensitive presentation/settings only |
+| User-authored reflection records | Yes, when the user chooses to create or view them | Yes, locally after storage protection is approved | No | Private notes only; never linked to a camera or inference session |
 | Bundled model/calibration/labels | Yes | Yes, app package | App-store delivery only | Versioned application assets; contain no production user data |
 | Model/version/integrity metadata | Yes | Yes, app package | App-store delivery only | Auditability and compatibility |
 
@@ -31,6 +32,7 @@ Only the following baseline categories may persist:
 - application binaries and versioned model assets;
 - model metadata, calibration parameters, label definitions, and integrity hashes;
 - non-sensitive preferences such as completed onboarding, theme, language, or accessibility display settings; and
+- user-authored reflection records, after the storage-protection decision required by ADR-0012 is implemented; and
 - aggregate build-time evaluation reports in the project repository, created from governed research—not from production users.
 
 Preferences must not encode a user's expression, session history, image-derived features, identity, or inferred characteristics. Local preferences should use platform-protected application storage and be excluded from backup if their future content becomes sensitive.
@@ -41,7 +43,7 @@ Under the baseline product policy, the app must never persist:
 
 - photos, video, audio, thumbnails, face crops, screenshots, or screen recordings;
 - face embeddings, identity templates, landmarks, tensors, or reconstructable image features;
-- raw or calibrated per-frame scores, selected labels, timelines, session summaries, or histories;
+- raw or calibrated per-frame scores, selected labels, machine-generated timelines, session summaries, histories, or any linkage between a user-authored reflection and an inference session;
 - inferred emotion, intent, health, honesty, personality, demographics, or sensitive traits;
 - advertising identifiers, persistent device fingerprints, precise location, contacts, or account identifiers;
 - camera-derived data in logs, traces, metrics, crash reports, clipboard, notifications, share sheets, backups, or support bundles; or
@@ -129,4 +131,3 @@ Any proposal to save, export, share, sync, personalize, analyze usage, collect s
 - Are OS crash facilities capable of capturing memory relevant to camera processing, and what release controls are required?
 - What exact support-data retention and deletion policy applies if a user voluntarily emails a screenshot?
 - Should the application package opt out of all platform backup or only protect a narrowly defined settings store?
-

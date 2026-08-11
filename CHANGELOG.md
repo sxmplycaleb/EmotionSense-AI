@@ -8,12 +8,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Front-facing, local-only camera preview foundation with lifecycle-safe Riverpod state and camera-service tests.
+- ADR-0013 and Milestone 2.1 camera/capture evidence.
+- ADR-0012 and Milestone 2.0 requirements-reconciliation evidence.
 - Pinned CodeQL analysis for GitHub Actions workflows.
 - Citation metadata, support guidance, issue-template configuration, and a GitHub hardening runbook.
 - Milestone 0.5 production-hardening audit and manual GitHub configuration checklist.
 
 ### Changed
 
+- Reconciled reflection/history requirements: only user-authored records may be retained; inference-derived data remains transient and prohibited from persistence.
 - Connected README status badges to the configured GitHub repository.
 - Added Conventional Commit prefixes to weekly Dependabot updates.
 - Updated security, contribution, release, and milestone documentation to reflect the tagged public foundation.

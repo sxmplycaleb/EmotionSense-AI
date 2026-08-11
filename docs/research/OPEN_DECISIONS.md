@@ -19,7 +19,6 @@
 | OD-12 | Decide whether model confidence is hidden, banded, or numerical after calibration and comprehension testing | Medium | UX and Responsible AI Leads | Pre-alpha usability review | Confidence presentation only |
 | OD-13 | Define platform backup exclusions, OS crash-memory controls, and voluntary support-data retention/deletion | High | Privacy and Security Leads | Phase 2.2 security/privacy review | Privacy gate and release |
 | OD-14 | Assign named stop-ship, rollback, incident, dataset, model, privacy, and security authorities | High | Executive/Product Sponsor | Before private alpha | Governance and release |
-| OD-15 | Reconcile user-authored reflection/history requirements with the prohibition on persisting model-derived inference history | High | Product Architecture Lead | Phase 2.0 requirements review | Any persistence implementation |
 | OD-16 | Future personalization, on-device adaptation, or federated learning | Low | Product and ML Governance Leads | Post-Version 1; new ADR | Out of initial scope |
 | OD-17 | Multi-face or bystander analysis | Low | Product, Privacy, and Responsible AI Leads | Post-Version 1; new ADR | Explicitly unsupported |
 | OD-18 | Future transformer/hybrid or larger model upgrades | Low | ML Lead | Responsible iteration after Version 1 | No effect on initial implementation |
@@ -30,6 +29,12 @@
 
 OD-01 through OD-20 do not block coding as a whole. They limit the dependent activity shown in the final column. Phase 2 should begin with interfaces, privacy/lifecycle controls, synthetic or governed fixtures, benchmark infrastructure, Android runtime feasibility, and requirements reconciliation. No unresolved item may be silently chosen by implementation convenience.
 
+## Resolved Decisions
+
+| ID | Resolution | Evidence |
+| --- | --- | --- |
+| OD-15 | Resolved in Milestone 2.0: only user-authored reflection records may be retained; all machine-derived data and record-to-session links remain prohibited. | [ADR-0012](../DECISIONS/ADR-0012-User-Authored-Reflection-Records.md) |
+
 ## Evidence Classification
 
 - **Facts:** each item comes from a named uncertainty in Milestones 1.0–1.4 or the Phase 1 consolidation.
@@ -37,4 +42,3 @@ OD-01 through OD-20 do not block coding as a whole. They limit the dependent act
 - **Trade-offs:** deferring future-scope choices prevents speculative architecture while preserving extensibility through ports and versioned contracts.
 - **Constraints:** owners are roles, not people; release-blocking scope remains blocked until evidence and approval exist.
 - **Open Questions:** this table is the authoritative list and must be updated when a decision is accepted, superseded, or rejected.
-

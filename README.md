@@ -9,7 +9,7 @@
 
 EmotionSense AI is an AI-powered emotional reflection platform with a privacy-conscious Flutter mobile application as its first client. The project is designed around on-device machine learning, transparent user control, and a maintainable architecture suitable for production delivery.
 
-> **Project status:** Milestone 0.5 GitHub production hardening. The repository foundation is public; no application features have been implemented.
+> **Project status:** Milestone 2.1 camera/capture foundation is complete. The app supports only an explicit, local-only front-camera preview; no detection, inference, persistence, or product insights are implemented.
 
 ## Vision
 
@@ -21,8 +21,8 @@ EmotionSense AI is intended as a wellness and reflection tool. It is not a medic
 
 - Consent-led onboarding and clear explanations of data use.
 - On-device analysis of supported visual and audio-derived signals.
-- Personal reflection entries and contextual annotations.
-- Private, local-first history and trend summaries.
+- User-authored reflection entries and contextual annotations.
+- Private, local-first history and summaries of user-authored reflections only.
 - User controls for capture, retention, export, and deletion.
 - Confidence-aware insights with limitations stated in plain language.
 - Accessibility, localization, and resilient offline behavior.

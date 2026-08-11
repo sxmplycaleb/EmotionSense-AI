@@ -144,10 +144,10 @@ Priority follows MoSCoW: Must, Should, Could, and Won't for the first production
 
 | ID | Priority | Requirement |
 | --- | --- | --- |
-| FR-020 | Must | Allow a user to add, edit, and delete a private reflection associated with a timestamp. |
-| FR-021 | Must | Allow the user to accept, change, or dismiss a machine-generated interpretation. |
-| FR-022 | Must | Show local history in chronological form without implying clinical trends. |
-| FR-023 | Must | Summarize local patterns over user-selected periods with sample size and uncertainty context. |
+| FR-020 | Must | Allow a user to add, edit, and delete a private, user-authored reflection associated with a user-selected timestamp. |
+| FR-021 | Must | Allow the user to dismiss any live machine-generated estimate; it must not be accepted, changed, or retained as a record. |
+| FR-022 | Must | Show chronological history of user-authored reflections only, without implying expression, emotion, or clinical trends. |
+| FR-023 | Must | Summarize only user-authored reflection records over user-selected periods, with clear scope and no inferred-pattern claim. |
 | FR-024 | Could | Allow user-defined tags for situations or activities. |
 
 ### 10.4 Data control
@@ -156,7 +156,7 @@ Priority follows MoSCoW: Must, Should, Could, and Won't for the first production
 | --- | --- | --- |
 | FR-030 | Must | Allow deletion of individual records and all application data. |
 | FR-031 | Must | Make retention behavior and stored data categories understandable. |
-| FR-032 | Should | Export user-owned records in a documented, portable format. |
+| FR-032 | Should | Export user-authored records in a documented, portable format only after a separately approved export and storage-protection decision. |
 | FR-033 | Must | Prevent application analytics from containing raw media, free-text reflections, or fine-grained inferred emotional labels. |
 
 ### 10.5 Reliability and support
@@ -247,7 +247,7 @@ Version 1 is complete only when all of the following are true:
 
 - Every Must requirement in this PRD is implemented and verified against its acceptance evidence.
 - All release acceptance criteria are satisfied without an unresolved release blocker.
-- The complete user workflow—consent, camera-based on-device inference, reflection, local history and pattern summaries, data control, and deletion—functions without network connectivity.
+- The complete user workflow—consent, camera-based on-device inference, user-authored reflection, user-authored history and summaries, data control, and deletion—functions without network connectivity.
 - Required product, architecture, operational, privacy, security, accessibility, model, third-party, and user-facing documentation exists and has been reviewed by the responsible stakeholders.
 - All required automated and manual tests pass on the approved platform and device matrix.
 - Release quality is achieved, including approved reliability, performance, accessibility, security, privacy, model-quality, reproducibility, and rollback evidence.
