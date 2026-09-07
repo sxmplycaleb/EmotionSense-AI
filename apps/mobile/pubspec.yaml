@@ -8,7 +8,7 @@ environment:
   flutter: 3.44.8
 
 dependencies:
-  camera: ^0.12.0+2
+  camera: ^0.12.1
   flutter:
     sdk: flutter
   flutter_riverpod: ^3.4.2
